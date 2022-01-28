@@ -1,0 +1,81 @@
+{%extends 'users/userbase.html'%}
+{%load static%}
+
+{%block contents%}
+<div class="features">
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<div class="section_title_container text-center">
+						<h2 class="section_title">Upload an Image to test  which is 640X480 Resolutions</h2>
+						<form  action="{%url 'UploadImageAction'%}" enctype="multipart/form-data" method="POST">
+{%csrf_token%}
+												 <table>
+                        <div class="form-group row">
+                <div class="col-md-12">
+					<strong>Select an Image</strong>  <input type="file" name="file"  accept="image/gif, image/jpeg, image/png" required placeholder="Select an Image to Upload"><br/>
+                </div>
+              </div>
+                        <div class="form-group row">
+
+              </div>
+
+
+                                <button class="btn btn-block btn-primary text-white py-3 px-5" style="margin-left:20%;"
+                                        type="submit">
+                                    Upload
+                                </button>
+
+
+                        {% if messages %}
+                        {% for message in messages %}
+                        <font color='GREEN'> {{ message }}</font>
+                        {% endfor %}
+                        {% endif %}
+
+                    </table>
+</form>
+					</div>
+                    <h2>Results table</h2>
+										 <font color="Black">
+                                                  <table border="2px" class="table table-hover table-dark">
+                    <thead>
+                    <tr class="table-danger">
+                        <th scope="col">S.No</th>
+                        <th scope="col">User Name</th>
+                        <th scope="col">File Name</th>
+                        <th scope="col">Emotions</th>
+                        <th scope="col">File</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Image</th>
+                        <th scope="col">Download</th>
+                        <th scope="col">Emotions</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for i in data %}
+                    <tr scope="row" style="color: BLUE; background-color:#FFFCBB">
+                        <td>{{forloop.counter}}</td>
+                        <td>{{i.username}}</td>
+                        <td>{{i.filename}}</td>
+                        <td>{{i.emotions}}</td>
+                        <td>{{i.file}}</td>
+                        <td>{{i.cdate}}</td>
+                        <td><img src="{{i.file}}" width="45" height="40"> </td>
+						<td><a class="btn-link" href="{{ i.file }}" target="_blank">Download</a></td>
+                        <td><a class="btn-link" href="/UserEmotionsDetect/?imgname={{ i.filename }}"
+                               style="color:DARKBLUE">Emotions View</a></td>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+
+				</div>
+			</div>
+			<div class="row features_row">
+
+
+			</div>
+		</div>
+	</div>
+{%endblock%}

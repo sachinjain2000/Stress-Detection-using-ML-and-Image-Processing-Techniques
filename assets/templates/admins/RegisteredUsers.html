@@ -1,0 +1,74 @@
+{%extends 'admins/adminbase.html'%}
+{%load static%}
+
+{%block contents%}
+
+<div class="home">
+		<div class="home_slider_container">
+
+			<!-- Home Slider -->
+			<div class="owl-carousel owl-theme home_slider">
+
+				<!-- Home Slider Item -->
+				<div class="owl-item">
+					<div class="home_slider_background" style="background-image:url({%static 'images/home_slider_1.jpg'%})"></div>
+					<div class="home_slider_content">
+						<div class="container">
+							<div class="row">
+								<div class="col text-center">
+
+									<div class="home_slider_subtitle">Registered users and Activate them</div>
+									<div class="home_slider_form_container">
+										<p>
+                                            <font color="Black">
+                                                  <table border="2px" class="table table-hover table-dark">
+                    <thead>
+                    <tr class="table-danger">
+                        <th scope="col">S.No</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Login ID</th>
+                        <th scope="col">Mobile</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Locality</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Activate</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for i in data %}
+                    <tr scope="row" style="color: BLUE; background-color:#FFFCBB">
+                        <td>{{forloop.counter}}</td>
+                        <td>{{i.name}}</td>
+                        <td>{{i.loginid}}</td>
+                        <td>{{i.mobile}}</td>
+                        <td>{{i.email}}</td>
+                        <td>{{i.locality}}</td>
+                        <td>{{i.status}}</td>
+
+                        {% if i.status == 'waiting' %}
+                        <td><a class="btn-link" href="/AdminActivaUsers/?uid={{ i.id }}"
+                               style="color:DARKBLUE">Activate</a></td>
+                        {% else %}
+                        <td> Activated</td>
+                        {% endif %}
+                    </tr>
+                    {% endfor %}
+
+
+                    </tbody>
+                </table>
+
+
+
+                                            </font>
+                                        </p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+{%endblock%}

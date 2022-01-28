@@ -1,0 +1,34 @@
+{%extends 'base.html'%}
+{%load static%}
+
+{%block contents%}
+
+<div class="home">
+		<div class="home_slider_container">
+
+			<!-- Home Slider -->
+			<div class="owl-carousel owl-theme home_slider">
+
+				<!-- Home Slider Item -->
+				<div class="owl-item">
+					<div class="home_slider_background" style="background-image:url({%static 'images/home_slider_1.jpg'%})"></div>
+					<div class="home_slider_content">
+						<div class="container">
+							<div class="row">
+								<div class="col text-center">
+									<div class="home_slider_title">Stress Detection in IT Professionals </div>
+									<div class="home_slider_subtitle">by Image Processing and Machine Learning</div>
+									<div class="home_slider_form_container">
+										<p>
+                                            <font color="Black">The main motive of our project is to detect stress in the IT professionals using vivid Machine learning and Image processing techniques .Our system is an upgraded version of the old stress detection systems which excluded the live detection and the personal counseling but this system comprises of live detection and periodic analysis of employees and detecting physical as well as mental stress levels in his/her by providing them with proper remedies for managing stress by providing survey form periodically. Our system mainly focuses on managing stress and making the working environment healthy and spontaneous for the employees and to get the best out of them during working hours.</font>
+                                        </p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+{%endblock%}

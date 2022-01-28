@@ -1,0 +1,71 @@
+{%extends 'base.html'%}
+{%load static%}
+
+{%block contents%}
+
+<div class="home">
+		<div class="home_slider_container">
+
+			<!-- Home Slider -->
+			<div class="owl-carousel owl-theme home_slider">
+
+				<!-- Home Slider Item -->
+				<div class="owl-item">
+					<div class="home_slider_background" style="background-image:url({%static 'images/home_slider_1.jpg'%})"></div>
+					<div class="home_slider_content">
+						<div class="container">
+							<div class="row">
+								<div class="col text-center">
+									<div class="home_slider_title">Admin Login Form </div>
+									<div class="home_slider_subtitle"></div>
+									<div class="home_slider_form_container">
+                                        <p>
+                                        <center>
+                                    <form action="{%url 'AdminLoginCheck'%}" method="POST" class="text-primary" style="width:100%">
+                    {% csrf_token %}
+                    <table>
+                        <div class="form-group row">
+                <div class="col-md-12">
+                  <input type="text" class="form-control" name="loginid" required placeholder="Enter Login Id">
+                </div>
+              </div>
+                        <div class="form-group row">
+                <div class="col-md-12">
+                  <input type="password" class="form-control" name="pswd" required placeholder="Enter password">
+                </div>
+              </div>
+
+
+                        <tr>
+                            <td>
+                                <button class="btn btn-block btn-primary text-white py-3 px-5" style="margin-left:20%;"
+                                        type="submit">
+                                    Login
+                                </button>
+                            </td>
+                        </tr>
+
+                        {% if messages %}
+                        {% for message in messages %}
+                        <font color='GREEN'> {{ message }}</font>
+                        {% endfor %}
+                        {% endif %}
+
+                    </table>
+
+                </form>
+                                </center>
+
+                                    </p>
+
+
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+{%endblock%}

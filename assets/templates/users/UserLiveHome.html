@@ -1,0 +1,36 @@
+{%extends 'users/userbase.html'%}
+{%load static%}
+
+{%block contents%}
+
+<div class="home">
+		<div class="home_slider_container">
+
+			<!-- Home Slider -->
+			<div class="owl-carousel owl-theme home_slider">
+
+				<!-- Home Slider Item -->
+				<div class="owl-item">
+					<div class="home_slider_background" style="background-image:url({%static 'images/home_slider_1.jpg'%})"></div>
+					<div class="home_slider_content">
+						<div class="container">
+							<div class="row">
+								<div class="col text-center">
+									<div class="home_slider_title">Stress Detection in IT Professionals </div>
+									<div class="home_slider_subtitle">by Image Processing and Machine Learning</div>
+									<div class="home_slider_form_container">
+										<p>
+                                            <font color="Black">
+                                                Detecting By Keras model <a href="{%url 'UserKerasModel'%}">Live </a> Now
+                                            </font>
+                                        </p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+{%endblock%}

@@ -1,0 +1,36 @@
+{%extends 'admins/adminbase.html'%}
+{%load static%}
+
+{%block contents%}
+<div class="features">
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<div class="section_title_container text-center">
+						<h2 class="section_title">Knn Algorithm Results</h2>
+						<h3>Accuarcy <font color="Green">{{accuracy}}</font></h3> <br/>
+						<h3>Classification Error <font color="Green">{{classificationerror}}</font></h3>
+						<h3>Sensitivity <font color="Green">{{sensitivity}}</font></h3>
+						<h3>Specificity <font color="Green">{{Specificity}}</font></h3>
+						<h3>False positive rate Error <font color="Green">{{fsp}}</font></h3>
+						<h3>Precision <font color="Green">{{precision}}</font></h3>
+
+
+					</div>
+                    <center>
+                    <h2>Results table</h2>
+										 <font color="Black">
+                                             {{data | safe}}
+                                         </font>
+                        </center>
+
+
+				</div>
+			</div>
+			<div class="row features_row">
+
+
+			</div>
+		</div>
+	</div>
+{%endblock%}

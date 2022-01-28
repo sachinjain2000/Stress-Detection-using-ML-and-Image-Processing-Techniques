@@ -1,0 +1,57 @@
+{%extends 'admins/adminbase.html'%}
+{%load static%}
+
+{%block contents%}
+
+    <div class="features">
+		<div class="container">
+			<div class="row">
+				<div class="col">
+
+
+									<div class="home_slider_title">Stress Detection in IT Professionals </div>
+									<div class="home_slider_subtitle">Admin View All Users Data</div>
+									<div class="home_slider_form_container">
+										<p>
+                                              <table border="2px" class="table table-hover table-dark">
+                    <thead>
+                    <tr class="table-danger">
+                        <th scope="col">S.No</th>
+                        <th scope="col">User Name</th>
+                        <th scope="col">File Name</th>
+                        <th scope="col">Emotions</th>
+                        <th scope="col">File</th>
+                        <th scope="col">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Date&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                        <th scope="col">Image</th>
+                        <th scope="col">Download</th>
+                        <th scope="col">Emotions</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for i in data %}
+                    <tr scope="row" style="color: BLUE; background-color:#FFFCBB">
+                        <td>{{forloop.counter}}</td>
+                        <td>{{i.username}}</td>
+                        <td>{{i.filename}}</td>
+                        <td>{{i.emotions}}</td>
+                        <td>{{i.file}}</td>
+                        <td>{{i.cdate}}</td>
+                        <td><img src="{{i.file}}" width="45" height="40"> </td>
+						<td><a class="btn-link" href="{{ i.file }}" target="_blank">Download</a></td>
+                        <td><a class="btn-link" href="/UserEmotionsDetect/?imgname={{ i.filename }}"
+                               style="color:DARKBLUE">Emotions View</a></td>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+                                        </p>
+									</div>
+								</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+{%endblock%}

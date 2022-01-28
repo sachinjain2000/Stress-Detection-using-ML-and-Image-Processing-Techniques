@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+<head>
+<title>Stress Feelings</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="Unicat project">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="{%static 'styles/bootstrap4/bootstrap.min.css'%}">
+<link href="{%static 'plugins/font-awesome-4.7.0/css/font-awesome.min.css'%}" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="{%static 'plugins/OwlCarousel2-2.2.1/owl.carousel.css'%}">
+<link rel="stylesheet" type="text/css" href="{%static 'plugins/OwlCarousel2-2.2.1/owl.theme.default.css'%}">
+<link rel="stylesheet" type="text/css" href="{%static 'plugins/OwlCarousel2-2.2.1/animate.css'%}">
+<link rel="stylesheet" type="text/css" href="{%static 'styles/main_styles.css'%}">
+<link rel="stylesheet" type="text/css" href="{%static 'styles/responsive.css'%}">
+</head>
+<body>
+
+<div class="super_container">
+
+	<!-- Header -->
+
+	<header class="header">
+
+		<!-- Header Content -->
+		<div class="header_container">
+			<div class="container">
+				<div class="row">
+					<div class="col">
+						<div class="header_content d-flex flex-row align-items-center justify-content-start">
+							<div class="logo_container">
+								<a href="{%url 'index'%}">
+									<div class="logo_text">Stress Detection in IT<span> Professionals</span></div>
+								</a>
+							</div>
+							<nav class="main_nav_contaner ml-auto">
+								<ul class="main_nav">
+									<li><a href="{%url 'index'%}">Home</a></li>
+									<li><a href="{%url 'UserLogin'%}">Users</a></li>
+									<li><a href="{%url 'AdminLogin'%}">Admin</a></li>
+									<li><a href="{%url 'UserRegister'%}">Registrations</a></li>
+
+								</ul>
+							</nav>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Header Search Panel -->
+		<div class="header_search_container">
+			<div class="container">
+				<div class="row">
+					<div class="col">
+						<div class="header_search_content d-flex flex-row align-items-center justify-content-end">
+							<form action="#" class="header_search_form">
+								<input type="search" class="search_input" placeholder="Search" required="required">
+								<button class="header_search_button d-flex flex-column align-items-center justify-content-center">
+									<i class="fa fa-search" aria-hidden="true"></i>
+								</button>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	{%block contents%}
+
+    {%endblock%}
+
+
+
+	<footer class="footer">
+		<div class="footer_background" style="background-image:url({%static 'images/footer_background.png'%})"></div>
+		<div class="container">
+			<div class="row copyright_row">
+				<div class="col">
+					<div class="copyright d-flex flex-lg-row flex-column align-items-center justify-content-start">
+						<div class="cr_text"></div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+</div>
+
+<script src="{%static 'js/jquery-3.2.1.min.js'%}"></script>
+<script src="{%static 'styles/bootstrap4/popper.js'%}"></script>
+<script src="{%static 'styles/bootstrap4/bootstrap.min.js'%}"></script>
+<script src="{%static 'plugins/greensock/TweenMax.min.js'%}"></script>
+<script src="{%static 'plugins/greensock/TimelineMax.min.js'%}"></script>
+<script src="{%static 'plugins/scrollmagic/ScrollMagic.min.js'%}"></script>
+<script src="{%static 'plugins/greensock/animation.gsap.min.js'%}"></script>
+<script src="{%static 'plugins/greensock/ScrollToPlugin.min.js'%}"></script>
+<script src="{%static 'plugins/OwlCarousel2-2.2.1/owl.carousel.js'%}"></script>
+<script src="{%static 'plugins/easing/easing.js'%}"></script>
+<script src="{%static 'plugins/parallax-js-master/parallax.min.js'%}"></script>
+<script src="{%static 'js/custom.js'%}"></script>
+</body>
+</html>
